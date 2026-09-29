@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Uber Handover</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Log the driver, signature and photo for every Uber Eats order.">
+<!-- Link preview for WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Uber Handover">
+<meta property="og:description" content="Driver name, reg, signature and photo logged for every Uber Eats order. Tap to open the form.">
+<meta property="og:image" content="https://theunisspar-bot.github.io/uber-handover/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://theunisspar-bot.github.io/uber-handover/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<style>
+html,body{margin:0;background:#0f1115;color:#e6e9ef;font:17px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:520px;margin:0 auto;padding:40px 18px;text-align:center}
+img{width:100%;border-radius:14px;margin-bottom:22px}
+a.btn{display:block;background:#3987e5;color:#fff;text-decoration:none;font-weight:600;font-size:19px;padding:16px;border-radius:12px;margin:10px 0}
+a.alt{background:#1f2430;border:1px solid #2a2f3a}
+.mu{color:#6b7383;font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img src="og.png" alt="">
+  <p class="mu" id="msg">Opening the handover form…</p>
+  <a class="btn" id="go" href="https://script.google.com/macros/s/AKfycbzPTFfcsgDBvEHvuXOHNHxm0GVUqV9Kr2lzhD0jLoYZWHD1hWtqE7iHjTG4CDyRDPUc/exec?s=ZSS">Open Uber Handover</a>
+  <a class="btn alt" id="today" href="https://script.google.com/macros/s/AKfycbzPTFfcsgDBvEHvuXOHNHxm0GVUqV9Kr2lzhD0jLoYZWHD1hWtqE7iHjTG4CDyRDPUc/exec?s=ZSS&view=today">Today's handovers</a>
+  <p class="mu">Add this page to your home screen — it opens the form for your store.</p>
+</div>
+<script>
+/* ?s=KSS on this link carries through to the form; default ZSS */
+var APP='https://script.google.com/macros/s/AKfycbzPTFfcsgDBvEHvuXOHNHxm0GVUqV9Kr2lzhD0jLoYZWHD1hWtqE7iHjTG4CDyRDPUc/exec';
+var s=(new URLSearchParams(location.search).get('s')||'ZSS').toUpperCase();
+document.getElementById('go').href=APP+'?s='+s;document.getElementById('today').href=APP+'?s='+s+'&view=today';
+setTimeout(function(){location.replace(APP+'?s='+s)},900);
+</script>
+</body>
+</html>
